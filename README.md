@@ -1,1 +1,1 @@
-# heroku_elixir_react
+# rails-mind-app
