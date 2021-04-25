@@ -5,9 +5,10 @@
 <ul>
 <% @contents.each do |content| %>
 
-<li>
-  Title: <%= content.title %>
-  Description: <%= content.description %>
+  <li>
+    Title: <%= content.title %>
+    Description: <%= content.description %>
+    <%= link_to 'Link', edit_content_path(content) %>
   </li>
 <%end%>
 </ul>

@@ -1,0 +1,19 @@
+<% if content.errors.any? %>
+  Errors: content.errors.full_messages.join(' ')
+<% end %>
+
+<%= form_with(model: content, local: true)  do  |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
