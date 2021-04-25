@@ -15,9 +15,13 @@ class ContentsController < ApplicationController
     if @content.save
       redirect_to contents_path, notice: "Content successfully created!"
     else
-      render :new, alert: @content.errors.full_messages.join(' ') 
+      render :new, alert: @content.errors.full_messages.join(' ')
     end
 
+  end
+
+  def edit
+    @content = Content.find(params[:id])
   end
 
   private
