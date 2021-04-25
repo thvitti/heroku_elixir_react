@@ -15,3 +15,23 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+
+import $ from 'jquery'
+import 'select2'
+
+const comboSelect2 = () => {
+  $(".js-select2-example").select2({
+      tags: true,
+      tokenSeparators: [',', ' ']
+  })
+}
+
+// $(document).ready(function() {
+//   console.log('document ready!');
+//   comboSelect2();
+// })
+
+$(document).on('turbolinks:load', function() {
+    comboSelect2();
+})
