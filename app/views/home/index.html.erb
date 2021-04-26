@@ -1,5 +1,11 @@
 <h1>Home#index</h1>
 
 <% @tags_data.each do |tag_name, total| %>
-  <%= tag_name%>(<%= total %>)
+   <% size_calc = total*20 %>
+   <% font_size = size_calc > 70 ? 70 : size_calc  %>
+   <% font_style = "font-size: #{font_size}px"  %>
+
+  <span style='<%= font_style%>' >
+    <%= link_to tag_name, contents_path(tags: tag_name), style: 'text-decoration: none' %>
+  </span>
 <% end %>
