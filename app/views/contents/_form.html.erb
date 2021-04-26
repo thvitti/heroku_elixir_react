@@ -3,28 +3,28 @@
 <% end %>
 
 <%= form_with(model: content, local: true)  do  |f| %>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :description %>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :tags %>
     <%= f.select :tags,
         options_for_select( current_user.tags.pluck(:name), content.tags.pluck(:name)),
         {},
         { class: 'form-control js-select2-example',
-          multiple: 'multiple',
-          style: 'width: 50%'}  %>
+          multiple: 'multiple'}
+    %>
   </div>
 
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Save', class: 'btn btn-primary' %>
   </div>
 <% end %>
